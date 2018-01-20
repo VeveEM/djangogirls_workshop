@@ -3,7 +3,17 @@
       <title>Veve`s blog</title>
     <head>
     <body>
-      <p><h1><em>Hi there<em></h1></p>
+      <div>
+        <h1><a href="/">Django Girls Blog</a></h1>
+      </div>
+      {% for post in posts %}
+          <div>
+          <p>published: {{ post.published_date }}</p>
+          <h2><a href="">{{forloop.counter}}. {{post.title }}</a></h2>
+          <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+      {% endfor %}
+
       <p>My favourite apps:</p>
         <ul>
           <li><a href="https://djangogirls.org">DjangoGirls</a> </li>
@@ -11,7 +21,6 @@
         </ul>
       <p></p>
       <img src="http://logosrated.net/wp-content/uploads/parser/Python-Logo-1.png">
-
       <p>Don`t forget the favourite animal GIFs</p>
         <ol>
           <li><a href="https://www.tumblr.com/tagged/green-llama">Llama</a> </li>
